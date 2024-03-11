@@ -27,6 +27,7 @@ class DeviceController: public QObject {
   std::shared_ptr<DeviceCallbackSubscriptionFactory> _device_cb_factory = nullptr;
 
  private slots:
+  void innerStartPeriodModelChangedSlot(quint64 value);
 
   void channelNameChangedViewSlot(int channel_num, const QString &value);
   void channelEnabledStatusChangedViewSlot(int channel_num, bool value);
@@ -49,7 +50,6 @@ class DeviceController: public QObject {
   void channelInvertedStatusesModelChangedSlot(const QVector<bool> &value);
   void channelStartSourcesModelChangedSlot(const QVector<uint16_t> &value);
   void channelStartModesModelChangedSlot(const QVector<uint16_t> &value);
-
 };
 
 

@@ -33,6 +33,8 @@ void DeviceEntityPoll::process() {
   SyncModuleStatusesPoll();
   SyncSFPStatusesPoll();
 
+  innerStartPeriodPoll();
+
   channelDelaysPoll();
   channelWidthsPoll();
   channelEnabledStatusesPoll();
@@ -251,5 +253,24 @@ void DeviceEntityPoll::channelNamesPoll() {
 
     callback->pushEvent(values);
     qDebug() << "CALLBACK CHANNEL DELAY PUSHED " << __func__;
+  }
+}
+
+void DeviceEntityPoll::innerStartPeriodPoll() {
+  if (_device_entity != nullptr) {
+    GetInnerStartPeriodRequest request{};
+    auto response = _device_entity->getInnerStartPeriod(request);
+
+    if (response.error_code != SUCCESS) {
+      // TODO: Здесь обработать ошибку
+      return ;
+    }
+
+    if (_callback_sub_factory != nullptr) {
+      auto callback = _callback_sub_factory->getInnerStartPeriodCallback();
+      if (callback != nullptr) {
+        callback->pushEvent(response.result);
+      }
+    }
   }
 }
