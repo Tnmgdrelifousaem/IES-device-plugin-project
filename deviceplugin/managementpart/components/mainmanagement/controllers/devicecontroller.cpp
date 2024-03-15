@@ -149,6 +149,12 @@ void DeviceController::innerStartPeriodModelChangedSlot(quint64 value) {
   }
 }
 
+void DeviceController::innerStatusModelChangedSlot(bool value) {
+    if (_device_view != nullptr) {
+        _device_view->setInnerStatus(value);
+    }
+}
+
 void DeviceController::channelNameChangedViewSlot(int channel_num, const QString &value) {
   if (_use_case_factory != nullptr) {
     auto set_channel_name_use_case = _use_case_factory->createSetChannelNameUseCase();

@@ -258,7 +258,17 @@ SetInnerStartPeriodResponse DeviceEntityConnectedStateStandaloneImpl1::setInnerS
     SetInnerStartPeriodResponse response;
 
     if (_reg_card != nullptr) {
-        response = _reg_card->getInnerStartPeriod(request);
+        response = _reg_card->setInnerStartPeriod(request);
+    }
+
+    return response;
+}
+
+SetInnerStatusResponse DeviceEntityConnectedStateStandaloneImpl1::setInnerStatus(SetInnerStatusRequest request) {
+    SetInnerStatusResponse response;
+
+    if (_reg_card != nullptr) {
+        response = _reg_card->setInnerStatus(request);
     }
 
     return response;

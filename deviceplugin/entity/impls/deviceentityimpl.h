@@ -51,8 +51,9 @@ class DeviceEntityImpl: public DeviceEntity {
   SetChannelStartModeResponse setChannelStartMode(SetChannelStartModeRequest request) override;
 
   GetInnerStartPeriodResponse getInnerStartPeriod(GetInnerStartPeriodRequest request) override;
-
   SetInnerStartPeriodResponse setInnerStartPeriod(SetInnerStartPeriodRequest request) override;
+
+  SetInnerStatusResponse setInnerStatus(SetInnerStatusRequest request) override;
 
   int getChannelCount() override;
 

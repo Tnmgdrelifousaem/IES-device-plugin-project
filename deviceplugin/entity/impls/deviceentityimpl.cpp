@@ -376,3 +376,15 @@ SetInnerStartPeriodResponse DeviceEntityImpl::setInnerStartPeriod(SetInnerStartP
 
     return response;
 }
+
+SetInnerStatusResponse DeviceEntityImpl::setInnerStatus(SetInnerStatusRequest request) {
+    SetInnerStatusResponse response{};
+
+    if (_current_state != nullptr) {
+        response = _current_state->setInnerStatus(request);
+    } else {
+        qCritical() << "Current state is nullptr " << __func__;
+    }
+
+    return response;
+}

@@ -80,3 +80,7 @@ GetInnerStartPeriodResponse DeviceEntityNotConnectedStateStandaloneImpl1::getInn
 SetInnerStartPeriodResponse DeviceEntityNotConnectedStateStandaloneImpl1::setInnerStartPeriod(SetInnerStartPeriodRequest request) {
     return SetInnerStartPeriodResponse();
 }
+
+SetInnerStatusResponse DeviceEntityNotConnectedStateStandaloneImpl1::setInnerStatus(SetInnerStatusRequest request) {
+    return SetInnerStatusResponse();
+}

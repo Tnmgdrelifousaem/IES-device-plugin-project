@@ -41,8 +41,9 @@ class DeviceEntityRegCardImpl1: public DeviceEntityRegCard {
   SetChannelStartModeResponse setChannelStartMode(SetChannelStartModeRequest request) override;
 
   GetInnerStartPeriodResponse getInnerStartPeriod(GetInnerStartPeriodRequest request) override;
+  SetInnerStartPeriodResponse setInnerStartPeriod(SetInnerStartPeriodRequest request) override;
 
-    SetInnerStartPeriodResponse setInnerStartPeriod(SetInnerStartPeriodRequest request) override;
+  SetInnerStatusResponse setInnerStatus(SetInnerStatusRequest request) override;
 
   int getChannelCount() override;
 

@@ -10,8 +10,8 @@ SetInnerStartPeriodUseCaseResponse SetInnerStartPeriodUseCase::execute(SetInnerS
     SetInnerStartPeriodUseCaseResponse response{};
 
     if (_device_entity != nullptr) {
-        GetInnerStartPeriodRequest entity_request;
-        auto entity_response = _device_entity->getInnerStartPeriod(entity_request);
+        SetInnerStartPeriodRequest entity_request;
+        auto entity_response = _device_entity->setInnerStartPeriod(entity_request);
 
         response.error_code = entity_response.error_code;
         response.value = entity_response.value;
