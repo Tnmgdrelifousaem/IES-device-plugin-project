@@ -366,3 +366,13 @@ GetInnerStartPeriodResponse DeviceEntityImpl::getInnerStartPeriod(GetInnerStartP
 
   return response;
 }
+
+SetInnerStartPeriodResponse DeviceEntityImpl::setInnerStartPeriod(SetInnerStartPeriodRequest request) {
+    SetInnerStartPeriodResponse response;
+
+    if (_current_state != nullptr) {
+        response = _current_state->setInnerStartPeriod(request);
+    }
+
+    return response;
+}

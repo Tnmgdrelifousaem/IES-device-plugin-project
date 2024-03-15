@@ -220,3 +220,16 @@ std::shared_ptr<GetInnerStartPeriodUseCase> UseCaseFactory::createGetInnerStartP
 
   return _get_inner_start_period_use_case;
 }
+
+std::shared_ptr<SetChannelStartModeUseCase> UseCaseFactory::createSetInnerStartPeriodUseCase() {
+    if (_set_inner_start_period_use_case == nullptr) {
+        if (_device_entity != nullptr) {
+            _set_inner_start_period_use_case = std::make_shared<SetInnerStartPeriodUseCase>(_device_entity);
+            qDebug() << "Usecase _set_inner_start_period_use_case is successfully created " << __func__;
+        } else {
+            qWarning() << "Device entity is nullptr " << __func__;
+        }
+    }
+
+    return _set_inner_start_period_use_case;
+}

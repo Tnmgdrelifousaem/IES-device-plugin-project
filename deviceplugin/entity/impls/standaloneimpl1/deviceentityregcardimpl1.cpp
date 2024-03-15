@@ -556,3 +556,20 @@ GetInnerStartPeriodResponse DeviceEntityRegCardImpl1::getInnerStartPeriod(GetInn
 
   return response;
 }
+
+SetInnerStartPeriodResponse DeviceEntityRegCardImpl1::setInnerStartPeriod(SetInnerStartPeriodRequest request) {
+    SetInnerStartPeriodResponse response{};
+
+    uint64_t value = request.value;
+
+    if (_modbus_wrapper != nullptr) {
+        auto error_code = _modbus_wrapper->readHoldingRegisters(2, 2, reg_values);
+        response.error_code = error_code;
+
+        if (error_code == SUCCESS) {
+            response.value = value;
+        }
+
+
+    }
+}

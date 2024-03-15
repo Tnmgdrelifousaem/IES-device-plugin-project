@@ -76,3 +76,7 @@ std::shared_ptr<DeviceEntityDTO> DeviceEntityNotConnectedStateStandaloneImpl1::u
 GetInnerStartPeriodResponse DeviceEntityNotConnectedStateStandaloneImpl1::getInnerStartPeriod(GetInnerStartPeriodRequest request) {
   return GetInnerStartPeriodResponse();
 }
+
+SetInnerStartPeriodResponse DeviceEntityNotConnectedStateStandaloneImpl1::setInnerStartPeriod(SetInnerStartPeriodRequest request) {
+    return SetInnerStartPeriodResponse();
+}
